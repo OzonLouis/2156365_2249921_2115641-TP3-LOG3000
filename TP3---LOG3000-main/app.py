@@ -1,3 +1,9 @@
+"""Web app for evaluating basic arithmetic expressions.
+
+Provides a minimal Flask UI that parses a single binary operation and
+returns the computed result.
+"""
+
 from flask import Flask, request, render_template
 from operators import add, subtract, multiply, divide
 
@@ -11,6 +17,17 @@ OPS = {
 }
 
 def calculate(expr: str):
+    """Parse and evaluate a single-operation expression.
+
+    Args:
+        expr (str): Expression string such as "2+3" with one operator.
+
+    Returns:
+        float: Numeric result of applying the operator.
+
+    Raises:
+        ValueError: If the expression is empty, malformed, or non-numeric.
+    """
     if not expr or not isinstance(expr, str):
         raise ValueError("empty expression")
 
@@ -27,7 +44,7 @@ def calculate(expr: str):
             op_char = ch
 
     if op_pos <= 0 or op_pos >= len(s) - 1:
-        # operator at start/end or not found
+        # Reject operator at start/end or missing operator.
         raise ValueError("invalid expression format")
 
     left = s[:op_pos]
@@ -43,6 +60,11 @@ def calculate(expr: str):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    """Render the calculator page and handle form submissions.
+
+    Returns:
+        str: Rendered HTML for the calculator page.
+    """
     result = ""
     if request.method == 'POST':
         expression = request.form.get('display', '')
