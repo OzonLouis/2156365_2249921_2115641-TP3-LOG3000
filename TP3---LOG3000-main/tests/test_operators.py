@@ -21,3 +21,8 @@ def test_multiply():
 def test_divide():
     """Return the quotient of two numbers."""
     assert divide(8, 2) == 4
+
+
+def test_divide_decimal():
+    """Return the decimal quotient when division has a remainder."""
+    assert divide(7, 2) == 3.5

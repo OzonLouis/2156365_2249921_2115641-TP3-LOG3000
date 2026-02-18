@@ -25,6 +25,11 @@ def test_calculate_division():
     assert calculate("8/2") == 4
 
 
+def test_calculate_division_decimal():
+    """Check that division with remainder returns decimal result."""
+    assert calculate("7/2") == 3.5
+
+
 def test_calculate_rejects_multiple_operators():
     """Reject expressions with more than one operator."""
     with pytest.raises(ValueError):
