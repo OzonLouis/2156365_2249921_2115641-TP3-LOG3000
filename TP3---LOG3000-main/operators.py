@@ -43,13 +43,13 @@ def multiply(a, b):
 
 
 def divide(a, b):
-    """Divide the left operand by the right using integer division.
+    """Divide the left operand by the right.
 
     Args:
         a (float): Left operand.
         b (float): Right operand.
 
     Returns:
-        float: Integer-division result of a // b.
+        float: Result of a / b.
     """
-    return a // b
+    return a / b
