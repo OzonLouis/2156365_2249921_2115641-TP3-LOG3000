@@ -37,9 +37,9 @@ def multiply(a, b):
         b (float): Right operand.
 
     Returns:
-        float: Result of a ** b.
+        float: Result of a * b.
     """
-    return a ** b
+    return a * b
 
 
 def divide(a, b):
