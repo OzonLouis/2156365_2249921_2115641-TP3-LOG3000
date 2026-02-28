@@ -17,16 +17,16 @@ def add(a, b):
 
 
 def subtract(a, b):
-    """Subtract the left operand from the right.
+    """Subtract the right operand from the left.
 
     Args:
         a (float): Left operand.
         b (float): Right operand.
 
     Returns:
-        float: Result of b - a.
+        float: Result of a - b.
     """
-    return b - a
+    return a - b
 
 
 def multiply(a, b):
@@ -40,7 +40,6 @@ def multiply(a, b):
         float: Result of a ** b.
     """
     return a ** b
-
 
 def divide(a, b):
     """Divide the left operand by the right using integer division.
