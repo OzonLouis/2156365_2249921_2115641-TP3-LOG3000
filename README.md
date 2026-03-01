@@ -34,7 +34,7 @@ L'objectif principal est de transformer une base de code initiale désordonnée 
 
 ---
 
-## 📁 Structure du Projet
+## Structure du Projet
 
 ```
 TP3---LOG3000-main/
@@ -248,8 +248,8 @@ git push -u origin fix/{numéro-issue}-{description}
 Changed subtract() to return a - b instead of b - a.
 
 ## Tests
-- ✅ test_calculate_subtraction
-- ✅ test_subtract
+- test_calculate_subtraction
+- test_subtract
 
 ## Changes
 - Modified `operators.py`: Fixed subtract function
@@ -276,10 +276,10 @@ python -m pytest -v
 ```
 
 **Critères de succès :**
-- ✅ Tous les tests pass
-- ✅ Aucun avertissement de linter
-- ✅ Documentation à jour
-- ✅ Code bien formaté
+- Tous les tests pass
+- Aucun avertissement de linter
+- Documentation à jour
+- Code bien formaté
 
 ## État du Projet
 
