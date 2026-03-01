@@ -31,11 +31,13 @@ def calculate(expr: str):
     if not expr or not isinstance(expr, str):
         raise ValueError("empty expression")
 
+    # Remove whitespace to simplify parsing (allows "2 + 3" or "2+3")
     s = expr.replace(" ", "")
 
     op_pos = -1
     op_char = None
 
+    # Find operator position (scope limited to single binary operations)
     for i, ch in enumerate(s):
         if ch in OPS:
             if op_pos != -1:
@@ -43,8 +45,8 @@ def calculate(expr: str):
             op_pos = i
             op_char = ch
 
+    # Operators at boundaries would leave an operand missing
     if op_pos <= 0 or op_pos >= len(s) - 1:
-        # Reject operator at start/end or missing operator.
         raise ValueError("invalid expression format")
 
     left = s[:op_pos]
