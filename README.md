@@ -1,82 +1,301 @@
 # Calculatrice Web Simple - LOG3000
 
 ## Informations Générales
-* **Nom du Projet :** Calculatrice Web Simple
-* **Numéro d'Équipe :** 70 
-* **Cours :** Génie logiciel (LOG3000) 
+
+| Information | Détail |
+| :--- | :--- |
+| **Nom du Projet** | Calculatrice Web Simple |
+| **Numéro d'Équipe** | 70 |
+| **Cours** | Génie Logiciel (LOG3000) |
+| **Langue** | Python, HTML, CSS, JavaScript |
+| **Framework** | Flask |
 
 ---
 
 ## Objectif et Portée
-Ce projet consiste en une application web de calculatrice simple construite avec la bibliothèque **Flask** de Python.
 
-L'objectif principal de ce dépôt est de transformer une base de code initiale désordonnée et peu fiable en un produit stable, documenté et testé. Nous mettons en œuvre des pratiques rigoureuses de gestion de versions, incluant une documentation approfondie et un pipeline de correction de bogues structuré.
+### Description du Projet
+Ce projet est une **application web de calculatrice simple** construite avec **Flask (Python)**. L'application permet aux utilisateurs de réaliser des opérations arithmétiques basiques (addition, soustraction, multiplication, division) via une interface web intuitive.
+
+### Objectif Principal
+L'objectif principal est de transformer une base de code initiale désordonnée et peu fiable en un produit **stable, documenté et testé**. Le projet met en œuvre :
+
+- Pratiques rigoureuses de gestion de versions (Git workflow)
+- Documentation complète (code et utilisateur)
+- Suite de tests complète (tests unitaires et d'intégration)
+- Pipeline structuré de correction de bogues
+- Standards de qualité logicielle
+
+### Portée
+- **Logique métier** : Opérations arithmétiques de base
+- **Interface** : Interface web responsive avec Flask
+- **Tests** : Coverage complet des fonctionnalités critiques
+- **Gestion du code** : Workflow Git avec branches et pull requests
 
 ---
 
-## Structure du Projet
-[cite_start]Le projet est organisé de manière modulaire pour séparer la logique métier de l'interface utilisateur:
+## 📁 Structure du Projet
 
-| Dossier/Fichier | Description |
-| :--- | :--- |
-| `app.py` | Point d'entrée du serveur Flask et gestion des routes. |
-| `logic/` | Contient la logique mathématique de la calculatrice. |
-| `templates/` | Fichiers HTML pour l'interface utilisateur. |
-| `static/` | Fichiers CSS pour le style et le design. |
-| `tests/` | Suite de tests unitaires et d'intégration. |
+```
+TP3---LOG3000-main/
+├── app.py                 # Point d'entrée Flask et gestion des routes
+├── operators.py           # Logique des opérations arithmétiques
+├── templates/
+│   └── index.html         # Interface utilisateur (HTML)
+├── static/
+│   └── style.css          # Styles et design (CSS)
+├── tests/
+│   ├── test_operators.py  # Tests unitaires des opérateurs
+│   └── test_calculate.py  # Tests de la fonction calculate()
+├── .gitignore             # Fichiers à ignorer par Git
+└── README.md              # Documentation du projet
+```
 
 ---
 
 ## Installation et Configuration
 
 ### Prérequis
-Assurez-vous d'avoir les éléments suivants installés sur votre machine:
-* **Python 3.x**
-* **pip** (gestionnaire de paquets Python)
-* **Git** 
+Assurez-vous d'avoir installé sur votre machine :
 
-### Guide d'installation (étape par étape)
-1. **Cloner le dépôt :**
+- **Python 3.8+**
+- **pip** (gestionnaire de paquets Python)
+- **Git**
+- **Navigateur web moderne**
+
+### Guide d'Installation (Étape par Étape)
+
+#### 1. Cloner le Dépôt
+```bash
+git clone <URL_DU_DEPOT>
+cd TP3---LOG3000-main
+```
+
+#### 2. Créer un Environnement Virtuel
+```bash
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+```
+
+#### 3. Installer les Dépendances
+```bash
+pip install -r requirements.txt
+```
+
+Ou installer manuellement :
+```bash
+pip install flask pytest
+```
+---
+
+## Utilisation
+
+### Lancer l'Application
+
+1. **Assurez-vous que l'environnement virtuel est activé :**
    ```bash
-   git clone [URL_DE_TON_DEPOT_GITLAB]
-   cd [NOM_DU_DOSSIER]
+   # Windows
+   venv\Scripts\activate
+   
+   # macOS/Linux
+   source venv/bin/activate
    ```
-2. **Installer les dépendances :**
+
+2. **Démarrez le serveur Flask :**
    ```bash
-   pip install pytest, flask
+   python app.py
    ```
-### Lancer l'application
-Pour démarrer le serveur de développement, exécutez la commande suivante à la racine du projet :
 
-  ```bash
-  python app.py
-  ```
-L'application sera accessible à l'adresse suivante : http://127.0.0.1:5000
+3. **Ouvrez votre navigateur web** et allez à :
+   ```
+   http://127.0.0.1:5000
+   ```
 
-#### Instructions d’utilisation:
+### Guide d'Utilisation de la Calculatrice
 
-Une fois l’application ouverte, l’utilisateur peut : Entrer une expression (ex. 4+5, 9/3, 6*7) à l’aide des boutons de la calculatrice. Appuyer sur = pour afficher le résultat. Appuyer sur C pour effacer l’écran. En cas d’erreur (par exemple, une expression invalide), un message d’erreur s’affiche à l’écran.
+#### Opérations Disponibles
+- Addition : Appuyez sur `+` entre deux nombres
+- Soustraction : Appuyez sur `-` entre deux nombres
+- Multiplication : Appuyez sur `*` entre deux nombres
+- Division : Appuyez sur `/` entre deux nombres
 
-### Tests:
+#### Étapes d'Utilisation
+1. **Entrer une expression** : Utilisez les boutons de la calculatrice pour entrer une expression (ex. `10 + 5`)
+2. **Valider l'opération** : Appuyez sur le bouton `=` pour calculer le résultat
+3. **Voir le résultat** : Le résultat s'affiche sur l'écran de la calculatrice
+4. **Effacer l'écran** : Appuyez sur `C` pour réinitialiser
 
-Le dossier /tests contient les fichiers de tests unitaires pour valider les fonctions de calcul et la logique Flask. Pour exécuter les tests, utiliser la commande suivante :
-  ```bash
-pytest
- ```
-ou 
-  ```bash
+#### Exemples d'Opérations
+| Opération | Résultat |
+| :--- | :--- |
+| `10 + 5` | `15` |
+| `10 - 4` | `6` |
+| `6 * 7` | `42` |
+| `7 / 2` | `3.5` |
+
+#### Gestion des Erreurs
+- Si vous entrez une **expression invalide** (ex. `5 +`), un **message d'erreur** s'affichera
+- Les **expressions vides** sont rejetées avec un message approprié
+- **Une seule opération** par expression (ex. `5 + 3 * 2` n'est pas autorisé)
+
+---
+
+## Tests
+
+### Exécuter les Tests
+
+#### Tous les Tests
+```bash
 python -m pytest
-  ```
-Les tests couvrent notamment : Les opérations arithmétiques (add, subtract, multiply, divide) Les erreurs de saisie dans la fonction calculate() Le bon fonctionnement du serveur Flask
+```
 
-### Flux de contribution (branches, PR, issues):
+#### Tests Verbeux (Affiche les détails)
+```bash
+python -m pytest -v
+```
 
-Le projet utilise un flux Git structuré pour assurer une bonne collaboration :
+### Couverture des Tests
 
-* main : version stable et testée du projet. bugfix/ : correction de bogues détectés par les tests.
+La suite de tests couvre :
 
-Chaque bogue détecté est documenté dans une Issue GitHub avec :
+| Catégorie | Tests |
+| :--- | :--- |
+| **Opérateurs** | `add()`, `subtract()`, `multiply()`, `divide()` |
+| **Fonction calculate()** | Expressions valides, expressions invalides, format d'erreur |
+| **Intégration** | Validation complète du pipeline calculate → opérateurs |
+| **Cas limites** | Division par zéro, expressions malformées, opérateurs multiples |
 
-* une description du problème, les étapes pour le reproduire, et l’assignation à un membre responsable.
+### Résultats Attendus
+Tous les tests doivent **passer** (PASSED) pour que le code soit considéré comme stable.
 
-* Les correctifs sont effectués sur une branche dédiée avant d’être validés via une Pull Request (PR).
+---
+
+## Flux de Contribution
+
+### Workflow de Gestion des Branches
+
+#### 1. Structure des Branches
+
+```
+main (branche stable)
+├── fix/1-subtraction-inverted
+├── fix/2-multiplication-exponentiation
+├── fix/3-ui-button-labels
+└── fix/4-division-floor-division
+```
+
+**Conventions de nommage :**
+- `main` : Version stable et testée
+- `fix/{numéro-issue}-{description}` : Correction de bogue
+- `feature/{description}` : Nouvelles fonctionnalités
+- `docs/{description}` : Documentation
+
+#### 2. Processus de Correction de Bogue
+
+##### Étape 1 : Créer une Issue
+```markdown
+**Titre :** [BUG] Description du problème
+
+**Description :**
+- Problème : Description claire du bogue
+- Étapes à reproduire : 1. ... 2. ... 3. ...
+- Résultat attendu : Comportement correct
+- Résultat actuel : Comportement incorrect
+```
+
+##### Étape 2 : Créer une Branche
+```bash
+git checkout main
+git pull origin main
+git checkout -b fix/{numéro-issue}-{description}
+```
+
+Exemple :
+```bash
+git checkout -b fix/1-subtraction-inverted
+```
+
+##### Étape 3 : Corriger le Bogue
+- Modifiez le code concerné
+- Testez le fix localement
+
+##### Étape 4 : Valider les Changements
+```bash
+git add <fichiers-modifiés>
+git commit -m "Fix #{numéro}: {description courte}"
+```
+
+Exemple :
+```bash
+git commit -m "Fix #1: Correct subtract() to return a - b instead of b - a"
+```
+
+##### Étape 5 : Pousser la Branche
+```bash
+git push -u origin fix/{numéro-issue}-{description}
+```
+
+##### Étape 6 : Ouvrir une Pull Request
+```markdown
+**Titre :** Fix #1: Correct subtraction operator inverted result
+
+**Description :**
+Changed subtract() to return a - b instead of b - a.
+
+## Tests
+- ✅ test_calculate_subtraction
+- ✅ test_subtract
+
+## Changes
+- Modified `operators.py`: Fixed subtract function
+```
+
+##### Étape 7 : Révision et Fusion
+1. Attendez la **révision du code**
+2. Répondez aux **commentaires**
+3. Une fois **approuvée**, fusionnez la branche avec `main`
+4. **Supprimez** la branche après fusion
+
+```bash
+git checkout main
+git pull origin main
+git branch -d fix/1-subtraction-inverted
+```
+
+#### 3. Réexécution des Tests
+
+Après chaque fusion sur `main` :
+```bash
+git checkout main
+python -m pytest -v
+```
+
+**Critères de succès :**
+- ✅ Tous les tests pass
+- ✅ Aucun avertissement de linter
+- ✅ Documentation à jour
+- ✅ Code bien formaté
+
+## État du Projet
+
+### Couverture des Tests
+- Opérateurs : 100% des cas couverts
+- Fonction calculate() : 100% des chemins testés
+- Interface : Validation visuelle complètement
+
+---
+
+## Support et Questions
+
+Pour toute question ou problème :
+1. Consultez la **documentation du code**
+2. Vérifiez les **issues existantes**
+3. Ouvrez une **nouvelle issue** avec les détails
+
+---
+
