@@ -15,10 +15,10 @@
 ## Objectif et Portée
 
 ### Description du Projet
-Ce projet est une **application web de calculatrice simple** construite avec **Flask (Python)**. L'application permet aux utilisateurs de réaliser des opérations arithmétiques basiques (addition, soustraction, multiplication, division) via une interface web intuitive.
+Ce projet est une application web de calculatrice simple construite avec Flask (Python). L'application permet aux utilisateurs de réaliser des opérations arithmétiques basiques (addition, soustraction, multiplication, division) via une interface web intuitive.
 
 ### Objectif Principal
-L'objectif principal est de transformer une base de code initiale désordonnée et peu fiable en un produit **stable, documenté et testé**. Le projet met en œuvre :
+L'objectif principal est de transformer une base de code initiale désordonnée et peu fiable en un produit stable, documenté et testé. Le projet met en œuvre :
 
 - Pratiques rigoureuses de gestion de versions (Git workflow)
 - Documentation complète (code et utilisateur)
@@ -125,10 +125,10 @@ pip install flask pytest
 - Division : Appuyez sur `/` entre deux nombres
 
 #### Étapes d'Utilisation
-1. **Entrer une expression** : Utilisez les boutons de la calculatrice pour entrer une expression (ex. `10 + 5`)
-2. **Valider l'opération** : Appuyez sur le bouton `=` pour calculer le résultat
-3. **Voir le résultat** : Le résultat s'affiche sur l'écran de la calculatrice
-4. **Effacer l'écran** : Appuyez sur `C` pour réinitialiser
+1. Entrer une expression : Utilisez les boutons de la calculatrice pour entrer une expression (ex. `10 + 5`)
+2. Valider l'opération : Appuyez sur le bouton `=` pour calculer le résultat
+3. Voir le résultat : Le résultat s'affiche sur l'écran de la calculatrice
+4. Effacer l'écran : Appuyez sur le bouton `C` pour réinitialiser
 
 #### Exemples d'Opérations
 | Opération | Résultat |
@@ -139,9 +139,9 @@ pip install flask pytest
 | `7 / 2` | `3.5` |
 
 #### Gestion des Erreurs
-- Si vous entrez une **expression invalide** (ex. `5 +`), un **message d'erreur** s'affichera
-- Les **expressions vides** sont rejetées avec un message approprié
-- **Une seule opération** par expression (ex. `5 + 3 * 2` n'est pas autorisé)
+- Si vous entrez une expression invalide (ex. `5 +`), un message d'erreur s'affichera
+- Les expressions vides sont rejetées avec un message approprié
+- Une seule opération par expression (ex. `5 + 3 * 2` n'est pas autorisé)
 
 ---
 
@@ -171,7 +171,7 @@ La suite de tests couvre :
 | **Cas limites** | Division par zéro, expressions malformées, opérateurs multiples |
 
 ### Résultats Attendus
-Tous les tests doivent **passer** (PASSED) pour que le code soit considéré comme stable.
+Tous les tests doivent passer pour que le code soit considéré comme stable.
 
 ---
 
@@ -256,10 +256,10 @@ Changed subtract() to return a - b instead of b - a.
 ```
 
 ##### Étape 7 : Révision et Fusion
-1. Attendez la **révision du code**
-2. Répondez aux **commentaires**
-3. Une fois **approuvée**, fusionnez la branche avec `main`
-4. **Supprimez** la branche après fusion
+1. Attendez la révision du code
+2. Répondez aux commentaires
+3. Une fois approuvée, fusionnez la branche avec `main`
+4. Supprimez la branche après fusion
 
 ```bash
 git checkout main
@@ -280,22 +280,4 @@ python -m pytest -v
 - Aucun avertissement de linter
 - Documentation à jour
 - Code bien formaté
-
-## État du Projet
-
-### Couverture des Tests
-- Opérateurs : 100% des cas couverts
-- Fonction calculate() : 100% des chemins testés
-- Interface : Validation visuelle complètement
-
----
-
-## Support et Questions
-
-Pour toute question ou problème :
-1. Consultez la **documentation du code**
-2. Vérifiez les **issues existantes**
-3. Ouvrez une **nouvelle issue** avec les détails
-
----
 
